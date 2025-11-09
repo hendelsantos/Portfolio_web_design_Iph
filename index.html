@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tudo Cell - iPhone Novos e Usados</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/extras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <h2>Tudo Cell</h2>
+          <span>iPhone Store</span>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Início</a>
+          </li>
+          <li class="nav-item">
+            <a href="#products" class="nav-link">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contato</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Os Melhores iPhones</h1>
+        <p>Novos e seminovos com qualidade garantida</p>
+        <a href="#products" class="btn-primary">Ver Produtos</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="iPhone">
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <div class="container">
+      <h2 class="section-title">Nossos Produtos</h2>
+
+      <!-- Category Filter -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="new">Novos</button>
+        <button class="filter-btn" data-filter="used">Seminovos</button>
+      </div>
+
+      <div class="products-grid">
+        <!-- iPhone 15 Pro Max -->
+        <div class="product-card" data-category="new">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone 15 Pro Max">
+            <div class="product-badge new">Novo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone 15 Pro Max</h3>
+            <p class="product-specs">256GB - Titânio Natural</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 48MP</span>
+              <span><i class="fas fa-microchip"></i> A17 Pro</span>
+              <span><i class="fas fa-battery-three-quarters"></i> 29h vídeo</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">R$ 9.999,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone 15 Pro Max 256GB">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- iPhone 14 Pro -->
+        <div class="product-card" data-category="new">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone 14 Pro">
+            <div class="product-badge new">Novo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone 14 Pro</h3>
+            <p class="product-specs">128GB - Roxo Profundo</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 48MP</span>
+              <span><i class="fas fa-microchip"></i> A16 Bionic</span>
+              <span><i class="fas fa-battery-three-quarters"></i> 23h vídeo</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">R$ 7.999,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone 14 Pro 128GB">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- iPhone 13 Pro Max Usado -->
+        <div class="product-card" data-category="used">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1611791483153-26842095b5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone 13 Pro Max">
+            <div class="product-badge used">Seminovo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone 13 Pro Max</h3>
+            <p class="product-specs">256GB - Azul Sierra</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 12MP</span>
+              <span><i class="fas fa-microchip"></i> A15 Bionic</span>
+              <span><i class="fas fa-star"></i> 9/10</span>
+            </div>
+            <div class="product-price">
+              <span class="original-price">R$ 7.999,00</span>
+              <span class="current-price">R$ 5.499,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone 13 Pro Max 256GB Seminovo">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- iPhone 12 Usado -->
+        <div class="product-card" data-category="used">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone 12">
+            <div class="product-badge used">Seminovo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone 12</h3>
+            <p class="product-specs">128GB - Preto</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 12MP</span>
+              <span><i class="fas fa-microchip"></i> A14 Bionic</span>
+              <span><i class="fas fa-star"></i> 8.5/10</span>
+            </div>
+            <div class="product-price">
+              <span class="original-price">R$ 4.999,00</span>
+              <span class="current-price">R$ 3.299,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone 12 128GB Seminovo">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- iPhone SE 2022 -->
+        <div class="product-card" data-category="new">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone SE">
+            <div class="product-badge new">Novo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone SE (2022)</h3>
+            <p class="product-specs">64GB - Vermelho</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 12MP</span>
+              <span><i class="fas fa-microchip"></i> A15 Bionic</span>
+              <span><i class="fas fa-battery-half"></i> 15h vídeo</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">R$ 2.999,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone SE 2022 64GB">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- iPhone 11 Usado -->
+        <div class="product-card" data-category="used">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1571502212342-70884a626fd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="iPhone 11">
+            <div class="product-badge used">Seminovo</div>
+          </div>
+          <div class="product-info">
+            <h3>iPhone 11</h3>
+            <p class="product-specs">128GB - Roxo</p>
+            <div class="product-features">
+              <span><i class="fas fa-camera"></i> 12MP</span>
+              <span><i class="fas fa-microchip"></i> A13 Bionic</span>
+              <span><i class="fas fa-star"></i> 9/10</span>
+            </div>
+            <div class="product-price">
+              <span class="original-price">R$ 3.999,00</span>
+              <span class="current-price">R$ 2.799,00</span>
+            </div>
+            <button class="whatsapp-btn" data-product="iPhone 11 128GB Seminovo">
+              <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Sobre a Tudo Cell</h2>
+          <p>Há mais de 10 anos no mercado, a <strong>Tudo Cell</strong> é especialista em iPhones novos e seminovos. Oferecemos produtos com qualidade garantida e os melhores preços do mercado.</p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-shield-alt"></i>
+              <h3>Garantia</h3>
+              <p>Todos os produtos com garantia de 6 meses</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-tools"></i>
+              <h3>Assistência</h3>
+              <p>Assistência técnica especializada em iPhones</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-medal"></i>
+              <h3>Qualidade</h3>
+              <p>Produtos rigorosamente testados e aprovados</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Loja Tudo Cell">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Fale Conosco</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Endereço</h3>
+              <p data-address>Rua das Flores, 123 - Centro<br>São Paulo - SP, 01234-567</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h3>Telefone</h3>
+              <p data-phone>(11) 99999-9999</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>E-mail</h3>
+              <p data-email>contato@tudocell.com.br</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>Horário</h3>
+              <p>Seg à Sex: 9h às 18h<br>Sáb: 9h às 14h</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-whatsapp">
+          <h3>Atendimento Direto</h3>
+          <p>Fale direto com nossos especialistas</p>
+          <a href="https://wa.me/5511999999999" class="whatsapp-big-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Conversar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">
+            <h3>Tudo Cell</h3>
+            <p>Sua loja especializada em iPhones</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#products">Produtos</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Redes Sociais</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Contato</h4>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-envelope"></i> contato@tudocell.com.br</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Tudo Cell. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
