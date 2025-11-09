@@ -1,0 +1,34 @@
+{
+  "name": "tudo-cell-iphone-store",
+  "version": "1.0.0",
+  "description": "Loja virtual moderna para venda de iPhones novos e seminovos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "python3 -m http.server 8080",
+    "build": "echo 'Build completed'"
+  },
+  "keywords": [
+    "iphone",
+    "loja",
+    "ecommerce",
+    "celular",
+    "apple",
+    "portfolio",
+    "web-design"
+  ],
+  "author": "Hendel Santos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "serve-static": "^1.15.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hendelsantos/Portfolio_web_design_Iph.git"
+  },
+  "homepage": "https://github.com/hendelsantos/Portfolio_web_design_Iph#readme"
+}
