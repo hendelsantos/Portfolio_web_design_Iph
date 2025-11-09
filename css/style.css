@@ -10,16 +10,89 @@ body {
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+/* Custom cursor for interactive elements */
+a,
+button,
+.clickable {
+  cursor: pointer;
+}
+
+/* Enhanced smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* Animações globais */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Global selection styling */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #333;
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: #333;
 }
 
 /* Header */
@@ -148,31 +221,56 @@ html {
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  animation: fadeInUp 0.8s ease;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+  animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .btn-primary {
   display: inline-block;
   padding: 15px 30px;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
   color: white;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
 }
 
 .hero-image img {
@@ -183,10 +281,12 @@ html {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   transform: rotate(5deg);
   transition: transform 0.3s ease;
+  animation: slideInRight 0.8s ease 0.4s both;
 }
 
 .hero-image img:hover {
   transform: rotate(0deg) scale(1.05);
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Products Section */

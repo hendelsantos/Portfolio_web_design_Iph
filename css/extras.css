@@ -431,3 +431,717 @@ body {
   position: relative;
   z-index: 2;
 }
+
+/* ======================
+   MELHORIAS VISUAIS PROFISSIONAIS
+   ====================== */
+
+/* Trust Section */
+.trust-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.trust-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Testimonials */
+.testimonials h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.testimonial-slider {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s ease;
+}
+
+.testimonial-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.customer strong {
+  display: block;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.customer span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.testimonial-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.testimonial-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.testimonial-btn.active {
+  background: var(--primary-color);
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102, 126, 234, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.benefit-card:hover::before {
+  left: 100%;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+  border-color: var(--primary-color);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: rotateY(360deg);
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.whatsapp-float {
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+}
+
+.whatsapp-float:hover {
+  background: #20b358;
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: 1px solid #e0e0e0;
+  min-width: 200px;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-10px);
+}
+
+.whatsapp-tooltip span {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.whatsapp-info {
+  font-size: 0.85rem;
+}
+
+.online-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+.online-status span {
+  color: #4caf50;
+  font-weight: 500;
+  margin: 0;
+}
+
+.whatsapp-info p {
+  color: #666;
+  margin: 0;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease;
+}
+
+.loading-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-content {
+  text-align: center;
+  color: white;
+}
+
+.loading-logo {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.loading-progress {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  animation: loading-progress 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes loading-progress {
+  0% {
+    width: 0%;
+    transform: translateX(-100%);
+  }
+  50% {
+    width: 50%;
+    transform: translateX(0%);
+  }
+  100% {
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+
+/* Melhorias na seção de produtos */
+.products {
+  position: relative;
+}
+
+.products::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, #f8f9fa, transparent);
+  pointer-events: none;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.product-card:hover::after {
+  left: 100%;
+}
+
+/* Responsive Design para novas seções */
+@media screen and (max-width: 768px) {
+  .trust-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .trust-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .benefit-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonials h3 {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-item {
+    padding: 1.5rem;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+}
+
+/* Estilos para toasts/notificações */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 400px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  border-left: 4px solid #667eea;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.hide {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.toast-success {
+  border-left-color: #27ae60;
+}
+
+.toast-error {
+  border-left-color: #e74c3c;
+}
+
+.toast-warning {
+  border-left-color: #f39c12;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.toast-content i {
+  font-size: 1.2rem;
+}
+
+.toast-success .toast-content i {
+  color: #27ae60;
+}
+
+.toast-error .toast-content i {
+  color: #e74c3c;
+}
+
+.toast-warning .toast-content i {
+  color: #f39c12;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.toast-close:hover {
+  color: #333;
+}
+
+/* Estilos para busca */
+.search-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  grid-column: 1 / -1;
+}
+
+/* Estilos para favoritos */
+.favorite-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.favorite-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.favorite-btn.active i {
+  color: #e74c3c;
+}
+
+.favorite-btn i {
+  font-size: 1.2rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+/* Badge do carrinho */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Botão de instalação PWA */
+.install-pwa {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  display: none;
+  z-index: 1000;
+}
+
+.install-pwa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+/* Melhorias no foco para acessibilidade */
+.user-is-tabbing *:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5) !important;
+  outline-offset: 2px !important;
+}

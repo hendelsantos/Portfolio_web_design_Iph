@@ -6,8 +6,128 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const productCards = document.querySelectorAll(".product-card");
 const whatsappButtons = document.querySelectorAll(".whatsapp-btn");
 
-// Número do WhatsApp da loja (substitua pelo número real)
-const whatsappNumber = "5511999999999";
+// JavaScript para o site Tudo Cell
+
+// Configuração global
+const CONFIG = {
+  whatsappNumber: "5511999999999",
+  storeInfo: {
+    name: "Tudo Cell",
+    address: "Centro da Cidade",
+  },
+};
+
+// Scroll suave para links
+document.addEventListener("DOMContentLoaded", function () {
+  // Efeito de fade in no scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  // Observar elementos com fade-in-scroll
+  document.querySelectorAll(".fade-in-scroll").forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Efeito de tilt para cards
+  document.querySelectorAll(".tilt-effect").forEach((el) => {
+    el.addEventListener("mousemove", function (e) {
+      const rect = el.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const deltaX = (e.clientX - centerX) / rect.width;
+      const deltaY = (e.clientY - centerY) / rect.height;
+
+      const tiltX = deltaY * 10;
+      const tiltY = deltaX * 10;
+
+      el.style.transform = `perspective(1000px) rotateX(${-tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+    });
+
+    el.addEventListener("mouseleave", function () {
+      el.style.transform =
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+    });
+  });
+
+  // Animação de contadores
+  function animateCounters() {
+    document.querySelectorAll(".counter-animation").forEach((counter) => {
+      const target = parseInt(
+        counter.getAttribute("data-count") ||
+          counter.getAttribute("data-target")
+      );
+      let current = 0;
+      const increment = target / 50;
+      const duration = 2000;
+      const stepTime = duration / 50;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        counter.textContent = Math.floor(current);
+      }, stepTime);
+    });
+  }
+
+  // Observar contadores para animação
+  const counterObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (
+          entry.isIntersecting &&
+          !entry.target.classList.contains("animated")
+        ) {
+          entry.target.classList.add("animated");
+          animateCounters();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll(".counter-animation").forEach((counter) => {
+    counterObserver.observe(counter);
+  });
+
+  // Efeito de mouse trail (opcional, para dispositivos desktop)
+  if (window.innerWidth > 768) {
+    let mouseTrails = [];
+    document.addEventListener("mousemove", function (e) {
+      if (mouseTrails.length > 5) {
+        const oldTrail = mouseTrails.shift();
+        if (oldTrail) oldTrail.remove();
+      }
+
+      const trail = document.createElement("div");
+      trail.classList.add("mouse-trail");
+      trail.style.left = e.clientX + "px";
+      trail.style.top = e.clientY + "px";
+      document.body.appendChild(trail);
+      mouseTrails.push(trail);
+
+      setTimeout(() => {
+        if (trail && trail.parentNode) {
+          trail.remove();
+        }
+        mouseTrails = mouseTrails.filter((t) => t !== trail);
+      }, 500);
+    });
+  }
+});
 
 // Mobile Menu Toggle
 hamburger.addEventListener("click", () => {
@@ -319,6 +439,248 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = getUserPreference("theme", "light");
   document.body.setAttribute("data-theme", savedTheme);
+
+  // Initialize new features
+  initCounterAnimation();
+  initTestimonialSlider();
+  initLoadingScreen();
+});
+
+// Counter Animation for Statistics
+function initCounterAnimation() {
+  const counters = document.querySelectorAll("[data-count]");
+
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  counters.forEach((counter) => observer.observe(counter));
+}
+
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute("data-count"));
+  const duration = 2000;
+  const increment = target / (duration / 16);
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current);
+    }
+  }, 16);
+}
+
+// Testimonial Slider
+function initTestimonialSlider() {
+  const testimonialItems = document.querySelectorAll(".testimonial-item");
+  const testimonialBtns = document.querySelectorAll(".testimonial-btn");
+  let currentSlide = 0;
+
+  // Auto-slide testimonials
+  setInterval(() => {
+    changeTestimonial((currentSlide + 1) % testimonialItems.length);
+  }, 5000);
+
+  // Manual navigation
+  testimonialBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      changeTestimonial(index);
+    });
+  });
+
+  function changeTestimonial(slideIndex) {
+    // Remove active class from all
+    testimonialItems.forEach((item) => item.classList.remove("active"));
+    testimonialBtns.forEach((btn) => btn.classList.remove("active"));
+
+    // Add active class to current
+    testimonialItems[slideIndex].classList.add("active");
+    testimonialBtns[slideIndex].classList.add("active");
+
+    currentSlide = slideIndex;
+  }
+}
+
+// Loading Screen
+function initLoadingScreen() {
+  const loadingScreen = document.querySelector(".loading-screen");
+
+  // Hide loading screen after page loads
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loadingScreen.classList.add("hide");
+    }, 1000);
+  });
+
+  // Fallback: hide after 3 seconds
+  setTimeout(() => {
+    loadingScreen.classList.add("hide");
+  }, 3000);
+}
+
+// Enhanced WhatsApp Integration
+function enhancedWhatsAppIntegration() {
+  // Update floating WhatsApp button
+  const floatingWhatsApp = document.querySelector(".whatsapp-float");
+  if (floatingWhatsApp) {
+    floatingWhatsApp.addEventListener("click", (e) => {
+      e.preventDefault();
+      const message = STORE_CONFIG.whatsappMessages.general;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${STORE_CONFIG.contact.whatsapp}?text=${encodedMessage}`;
+      window.open(whatsappUrl, "_blank");
+    });
+  }
+}
+
+// Smooth reveal animations for new sections
+function initSmoothReveal() {
+  const revealElements = document.querySelectorAll(
+    ".benefit-card, .stat-item, .testimonial-item"
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }, index * 100);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(30px)";
+    element.style.transition = "all 0.6s ease";
+    revealObserver.observe(element);
+  });
+}
+
+// Performance optimization - Intersection Observer for images
+function initLazyImageLoading() {
+  const images = document.querySelectorAll("img[data-src]");
+
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove("lazy");
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach((img) => imageObserver.observe(img));
+}
+
+// Enhanced scroll to top with progress indicator
+function createEnhancedBackToTop() {
+  const button = document.createElement("button");
+  button.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M12 4L8 8H16L12 4Z" fill="currentColor"/>
+      <path d="M12 20L12 8" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <div class="scroll-progress"></div>
+  `;
+  button.className = "back-to-top-enhanced";
+  button.style.cssText = `
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  `;
+
+  const progressStyle = document.createElement("style");
+  progressStyle.textContent = `
+    .scroll-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      width: 0%;
+      transition: width 0.1s ease;
+      border-radius: 50px;
+    }
+    
+    .back-to-top-enhanced:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+  `;
+  document.head.appendChild(progressStyle);
+
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener(
+    "scroll",
+    debounce(() => {
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollTop = window.pageYOffset;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+      const progress = button.querySelector(".scroll-progress");
+      if (progress) {
+        progress.style.width = `${scrollPercent}%`;
+      }
+
+      if (scrollTop > 300) {
+        button.style.opacity = "1";
+        button.style.transform = "scale(1)";
+      } else {
+        button.style.opacity = "0";
+        button.style.transform = "scale(0)";
+      }
+    }, 10)
+  );
+
+  document.body.appendChild(button);
+}
+
+// Initialize all enhanced features
+document.addEventListener("DOMContentLoaded", () => {
+  initSmoothReveal();
+  initLazyImageLoading();
+  createEnhancedBackToTop();
+  enhancedWhatsAppIntegration();
 });
 
 // Utility function to debounce scroll events

@@ -1,14 +1,10 @@
 # 📱 Tudo Cell - iPhone Store# Tudo Cell - Loja Virtual de iPhones
 
-
-
 ![iPhone Store](https://img.shields.io/badge/iPhone-Store-blue?style=for-the-badge&logo=apple)Uma loja virtual moderna e responsiva especializada em iPhones novos e seminovos.
 
 ![Status](https://img.shields.io/badge/Status-Ready%20for%20Railway-green?style=for-the-badge)
 
 ![Version](https://img.shields.io/badge/Version-1.0.0-orange?style=for-the-badge)## 🚀 Características
-
-
 
 ## 🌟 Descrição- **Design Moderno**: Interface elegante com gradientes e animações suaves
 
@@ -40,39 +36,33 @@
 
 ## 🛍️ Produtos Disponíveis- **Unsplash**: Imagens de alta qualidade
 
-
-
 ### 📱 **Novos**## 📁 Estrutura do Projeto
 
 - iPhone 15 Pro Max 256GB - R$ 9.999,00
 
-- iPhone 14 Pro 128GB - R$ 7.999,00  ```
+- iPhone 14 Pro 128GB - R$ 7.999,00 ```
 
 - iPhone SE (2022) 64GB - R$ 2.999,00SITE-IPHONE/
 
-├── index.html          # Página principal
+├── index.html # Página principal
 
 ### 🔄 **Seminovos**├── css/
 
-- iPhone 13 Pro Max 256GB - R$ 5.499,00│   └── style.css      # Estilos CSS
+- iPhone 13 Pro Max 256GB - R$ 5.499,00│ └── style.css # Estilos CSS
 
 - iPhone 12 128GB - R$ 3.299,00├── js/
 
-- iPhone 11 128GB - R$ 2.799,00│   └── script.js      # Scripts JavaScript
+- iPhone 11 128GB - R$ 2.799,00│ └── script.js # Scripts JavaScript
 
-└── README.md          # Documentação
+└── README.md # Documentação
 
 ## 🚀 Deploy no Railway```
-
-
 
 ### Pré-requisitos## 🎨 Seções do Site
 
 - Conta no [Railway](https://railway.app)
 
 - Repositório GitHub conectado### Header
-
-
 
 ### Passos para Deploy- Logo da loja
 
@@ -104,7 +94,7 @@
 
 - Cards com:
 
-```  - Imagem do produto
+````- Imagem do produto
 
 ├── index.html              # Página principal  - Especificações
 
@@ -239,7 +229,7 @@ No arquivo `css/style.css`, modifique as variáveis de gradiente:
 
 ```css
 background: linear-gradient(135deg, #SUA_COR_1 0%, #SUA_COR_2 100%);
-```
+````
 
 ### Adicionar Seções
 
@@ -302,4 +292,5 @@ Para dúvidas sobre implementação ou customização:
 ---
 
 **Desenvolvido com ❤️ para a Tudo Cell**
+
 # Portfolio_web_design_Iph

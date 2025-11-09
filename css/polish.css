@@ -1,0 +1,291 @@
+/* Melhorias Finais e Polimento */
+
+/* Smooth scroll melhorado */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Otimizações de performance */
+* {
+  will-change: auto;
+}
+
+.hero-image img,
+.product-image img,
+.tilt-effect {
+  will-change: transform;
+}
+
+.counter-animation {
+  will-change: contents;
+}
+
+/* Melhorias na acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .mouse-trail,
+  .particle-effect::before,
+  .wave-background::after {
+    display: none !important;
+  }
+}
+
+/* Focus states melhorados */
+a:focus,
+button:focus,
+.filter-btn:focus,
+.whatsapp-btn:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}
+
+/* Estados de loading */
+.loading-state {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading-state::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #667eea;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Melhorias no mobile */
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .tilt-effect:hover {
+    transform: none !important;
+  }
+
+  .mouse-trail {
+    display: none;
+  }
+
+  .wave-background::after {
+    opacity: 0.1;
+  }
+}
+
+/* Estados hover melhorados */
+@media (hover: hover) {
+  .product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  .nav-link:hover {
+    color: #667eea;
+    transform: translateY(-1px);
+  }
+}
+
+/* Melhorias na tipografia */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Otimização de imagens */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Estados de erro */
+.error-state {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-state i {
+  color: #e74c3c;
+}
+
+/* Estados de sucesso */
+.success-state {
+  color: #27ae60;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.success-state i {
+  color: #27ae60;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Estilo para conteúdo selecionado */
+::selection {
+  background: rgba(102, 126, 234, 0.2);
+  color: #333;
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.2);
+  color: #333;
+}
+
+/* Print styles */
+@media print {
+  .nav,
+  .floating-whatsapp,
+  .scroll-to-top,
+  .mouse-trail,
+  .loading-overlay {
+    display: none !important;
+  }
+
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Dark mode support (futuro) */
+@media (prefers-color-scheme: dark) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Melhorias na acessibilidade para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Skip links para navegação por teclado */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #667eea;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Indicador de carregamento global */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.page-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Otimizações finais */
+.optimized {
+  contain: layout style paint;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Cleanup classes */
+.no-scroll {
+  overflow: hidden;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+/* Container queries (futuro) */
+@container (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

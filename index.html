@@ -4,9 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tudo Cell - iPhone Novos e Usados</title>
+  <title>Tudo Cell - iPhone Novos e Usados | Loja Especializada</title>
+  <meta name="description" content="Loja especializada em iPhones novos e seminovos com garantia. Os melhores preços e qualidade garantida. WhatsApp direto para vendas.">
+  <meta name="keywords" content="iPhone, celular, Apple, seminovo, novo, loja, garantia, WhatsApp">
+  <meta name="author" content="Tudo Cell">
+  <meta property="og:title" content="Tudo Cell - iPhone Store">
+  <meta property="og:description" content="Os melhores iPhones novos e seminovos com garantia">
+  <meta property="og:type" content="website">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#667eea">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tudo Cell">
+  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1601972599720-f3070c6b0aff?w=180&h=180&fit=crop&crop=center">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/extras.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/polish.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,15 +60,16 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <!-- Hero Section -->
+  <section class="hero wave-background">
     <div class="hero-container">
       <div class="hero-content">
-        <h1>Os Melhores iPhones</h1>
-        <p>Novos e seminovos com qualidade garantida</p>
-        <a href="#products" class="btn-primary">Ver Produtos</a>
+        <h1 class="animated-gradient-text">Tudo Cell</h1>
+        <p class="fade-in-scroll">Os melhores iPhones novos e seminovos com garantia e qualidade comprovada</p>
+        <a href="#produtos" class="btn-primary ripple morphing-btn">Ver Produtos</a>
       </div>
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="iPhone">
+        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=600&fit=crop&crop=center&auto=format&q=80" alt="iPhone" class="tilt-effect smooth-zoom">
       </div>
     </div>
   </section>
@@ -216,6 +231,73 @@
     </div>
   </section>
 
+  <!-- Trust Section -->
+  <section class="trust-section glass-effect">
+    <div class="container">
+      <div class="trust-content">
+        <div class="trust-stats">
+          <div class="stat-item fade-in-scroll">
+            <div class="stat-number counter-animation" data-count="500">0</div>
+            <div class="stat-label">iPhones Vendidos</div>
+          </div>
+          <div class="stat-item fade-in-scroll">
+            <div class="stat-number counter-animation" data-count="98">0</div>
+            <div class="stat-label">% Satisfação</div>
+          </div>
+          <div class="stat-item fade-in-scroll">
+            <div class="stat-number counter-animation" data-count="10">0</div>
+            <div class="stat-label">Anos no Mercado</div>
+          </div>
+          <div class="stat-item fade-in-scroll">
+            <div class="stat-number counter-animation" data-count="24">0</div>
+            <div class="stat-label">h Suporte</div>
+          </div>
+        </div>
+
+        <div class="testimonials">
+          <h3>O que nossos clientes dizem</h3>
+          <div class="testimonial-slider">
+            <div class="testimonial-item active">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>"Comprei um iPhone 13 Pro Max e chegou em perfeitas condições. Atendimento excelente via WhatsApp!"</p>
+                <div class="customer">
+                  <strong>Maria Silva</strong>
+                  <span>São Paulo, SP</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>"Melhor preço que encontrei. iPhone 14 novinho em folha com garantia. Recomendo!"</p>
+                <div class="customer">
+                  <strong>João Santos</strong>
+                  <span>Rio de Janeiro, RJ</span>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="stars">★★★★★</div>
+                <p>"Atendimento rápido, produto original e entrega no prazo. Tudo Cell é confiável!"</p>
+                <div class="customer">
+                  <strong>Ana Costa</strong>
+                  <span>Belo Horizonte, MG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-navigation">
+            <button class="testimonial-btn active" data-slide="0"></button>
+            <button class="testimonial-btn" data-slide="1"></button>
+            <button class="testimonial-btn" data-slide="2"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
@@ -243,6 +325,57 @@
         </div>
         <div class="about-image">
           <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Loja Tudo Cell">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Por que escolher a Tudo Cell?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-shipping-fast"></i>
+          </div>
+          <h3>Entrega Rápida</h3>
+          <p>Entrega em até 24h para região metropolitana. Frete grátis acima de R$ 2.000</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Produto Original</h3>
+          <p>Todos os iPhones são originais Apple com garantia de autenticidade</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Assistência Técnica</h3>
+          <p>Suporte técnico especializado e assistência autorizada Apple</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3>Pagamento Flexível</h3>
+          <p>Parcelamento em até 12x sem juros no cartão ou PIX com desconto</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+          <h3>Troca Garantida</h3>
+          <p>7 dias para troca sem questionamentos. Satisfação garantida</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Suporte 24/7</h3>
+          <p>Atendimento via WhatsApp disponível 24 horas por dia</p>
         </div>
       </div>
     </div>
@@ -335,8 +468,39 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float">
+      <i class="fab fa-whatsapp"></i>
+      <div class="whatsapp-tooltip">
+        <span>Fale conosco!</span>
+        <div class="whatsapp-info">
+          <div class="online-status">
+            <div class="status-dot"></div>
+            <span>Online agora</span>
+          </div>
+          <p>Resposta em até 5 min</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <i class="fab fa-apple"></i>
+      </div>
+      <div class="loading-text">Tudo Cell</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/config.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/advanced.js"></script>
 </body>
 
 </html>
